@@ -163,8 +163,7 @@ class Works:
     def __eq__(self, other):
         return (
             self._content == getattr(other, 'content')
-            if hasattr(other, 'content')
-            else False
+            if hasattr(other, 'content') else False
         )
 
     def is_empty(self):
