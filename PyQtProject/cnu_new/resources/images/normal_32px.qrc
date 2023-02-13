@@ -1,0 +1,16 @@
+<RCC>
+  <qresource prefix="normal">
+    <file>32_white_svg/danxuanxuanzhong.svg</file>
+    <file>32_white_svg/guanbi.svg</file>
+    <file>32_white_svg/liebiao.svg</file>
+    <file>32_white_svg/shezhi.svg</file>
+    <file>32_white_svg/sousuo.svg</file>
+    <file>32_white_svg/tupian.svg</file>
+    <file>32_white_svg/weixuanzhong.svg</file>
+    <file>32_white_svg/xiazai.svg</file>
+    <file>32_white_svg/xuanzhong.svg</file>
+    <file>32_white_svg/yonghu.svg</file>
+    <file>32_white_svg/youjiantou.svg</file>
+    <file>32_white_svg/zuojiantou.svg</file>
+  </qresource>
+</RCC>

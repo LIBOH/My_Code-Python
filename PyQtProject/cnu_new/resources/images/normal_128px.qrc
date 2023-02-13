@@ -1,0 +1,27 @@
+<RCC>
+  <qresource prefix="normal">
+    <file>128_white_svg/60-多选.svg</file>
+    <file>128_white_svg/61-多选-选中.svg</file>
+    <file>128_white_svg/ico_阅读量.svg</file>
+    <file>128_white_svg/点赞.svg</file>
+    <file>128_white_svg/时间.svg</file>
+    <file>128_white_svg/最小化.svg</file>
+    <file>128_white_svg/交换.svg</file>
+    <file>128_white_svg/皮肤.svg</file>
+    <file>128_white_svg/勾选-m.svg</file>
+    <file>128_white_svg/danxuanxuanzhong.svg</file>
+    <file>128_white_svg/guanbi.svg</file>
+    <file>128_white_svg/liebiao.svg</file>
+    <file>128_white_svg/shezhi.svg</file>
+    <file>128_white_svg/sousuo.svg</file>
+    <file>128_white_svg/tupian.svg</file>
+    <file>128_white_svg/weixuanzhong.svg</file>
+    <file>128_white_svg/xiazai.svg</file>
+    <file>128_white_svg/xuanzhong.svg</file>
+    <file>128_white_svg/yonghu.svg</file>
+    <file>128_white_svg/youjiantou.svg</file>
+    <file>128_white_svg/zuojiantou.svg</file>
+    <file>32_white_svg/youjiantou.svg</file>
+    <file>16_white_png/youjiantou.png</file>
+  </qresource>
+</RCC>

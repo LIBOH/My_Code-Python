@@ -1,0 +1,16 @@
+boss_key: true
+cache_path: ''
+clear_cache: true
+default_cache_path: crawl_images/cache
+default_full_path: crawl_images/full
+default_save_path: crawl_images/
+download_domain: http://imgoss.cnu.cc/
+exit_window: true
+full_path: ''
+save_path: ''
+show_window:
+- control
+- shift
+- w
+theme: Default
+version: 3.4.4
