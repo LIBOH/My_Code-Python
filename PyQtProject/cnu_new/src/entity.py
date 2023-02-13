@@ -1,5 +1,4 @@
 import json
-import pprint
 
 import cnu_new
 
@@ -10,7 +9,6 @@ class Atlas:
 
     def __init__(self, data: str):
         """
-
         :param data='{
                 'statu_code': self._OK,
                 'content': {
@@ -111,12 +109,11 @@ Atlas: {{
 
 
 class Works:
-    # User的实例对象
+    # Works的实例对象
     _instance = None
 
     def __init__(self, data: str):
         """
-
         :param data: '[{
             "autherName": "\u732b\u4e0e\u75c5\u718a",
             "content": {
@@ -189,13 +186,13 @@ class Works:
     @property
     def atlas_title(self):
         if not self._user_dict:
-            raise RuntimeError('UserError: method["register_user_dict"] must be called first!')
+            raise RuntimeError('WorksError: method["register_user_dict"] must be called first!')
         return self._user_dict['content']['atlas_title']
 
     @property
     def thumbnail_url(self):
         if not self._user_dict:
-            raise RuntimeError('UserError: method["register_user_dict"] must be called first!')
+            raise RuntimeError('WorksError: method["register_user_dict"] must be called first!')
         return self._user_dict['content']['thumbnail_url']
 
     @property
