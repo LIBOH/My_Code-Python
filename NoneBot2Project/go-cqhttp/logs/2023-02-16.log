@@ -791,3 +791,4 @@
 [2023-02-16 03:34:56] [WARNING]: 监听反向WS Universal时出现错误: websocket: close 1006 (abnormal closure): unexpected EOF 
 [2023-02-16 03:35:02] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:59429->127.0.0.1:8080: use of closed network connection 
 [2023-02-16 03:37:47] [WARNING]: 监听反向WS Universal时出现错误: websocket: close 1006 (abnormal closure): unexpected EOF 
+[2023-02-16 03:37:52] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:59452->127.0.0.1:8080: use of closed network connection 
