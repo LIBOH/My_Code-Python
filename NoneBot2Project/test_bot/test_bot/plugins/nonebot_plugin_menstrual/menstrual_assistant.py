@@ -48,11 +48,9 @@ class MenstrualDate:
 
     def pred_menstrual(self):
         start = date(self._year, self._month, self._day)
-        if not self._nearly_menstrual_end:
-            end = start + timedelta(self.DURATION_of_TIMES - 1)
-        else:
-            end = self._nearly_menstrual_end
-
+        end = self._nearly_menstrual_end or start + timedelta(
+            self.DURATION_of_TIMES - 1
+        )
         return start, end
 
     def next_menstrual(self):
