@@ -37,5 +37,5 @@ def total_info(username):
         f'<{username}>上次月经结束于: {get_pred_end(username)} -- Tips: 如果不正确请使用命令`update <用户名> 上次结束 <yyyy-mm-dd>`修改!\n',
         f'<{username}>上次月经持续天数为: {get_pred_advance(username)}天\n',
         f'<{username}>经期提前提醒天数为: {get_default_advance(username)}天\n',
-        f'<{username}>经期周期为: {get_cycle(username)}天\n',
+        f'<{username}>经期周期为: {get_cycle(username)}天\n'
     ]
