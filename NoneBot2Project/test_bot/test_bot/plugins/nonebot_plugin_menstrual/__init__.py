@@ -1,17 +1,27 @@
-from nonebot.matcher import Matcher
+from datetime import date
+
 from nonebot import on_command
+from nonebot.matcher import Matcher
+from nonebot.adapters import Bot, Event
 from nonebot.adapters import Message
 from nonebot.params import CommandArg
 from nonebot.log import logger
+from nonebot_plugin_apscheduler import scheduler
 
 from .utils import init_data, modify_data
+from .config import plugin_config
 from .menstrual import *
 
 
 init_ms = on_command('init', aliases={'初始化'}, priority=10)
 ms = on_command('ms', priority=10)
 update = on_command('update', priority=10)
+a = on_command('a')
 
+
+def check_account(event):
+    return event.get_user_id() in plugin_config['allow_to_use']
+        
 
 @init_ms.handle()
 async def init_menstrual(matcher: Matcher, user_data: Message = CommandArg()):
@@ -30,7 +40,10 @@ async def init_menstrual(matcher: Matcher, user_data: Message = CommandArg()):
 
 
 @ms.handle()
-async def info(matcher: Matcher, commands: Message = CommandArg()):
+async def info(matcher: Matcher, event: Event, commands: Message = CommandArg()):
+    if not check_account(event):
+        return
+
     if command := commands.extract_plain_text():
         command_list = command.split(' ')
         if len(command_list) != 2:
@@ -48,7 +61,10 @@ async def info(matcher: Matcher, commands: Message = CommandArg()):
 
 
 @update.handle()
-async def update_filed(matcher: Matcher, commands: Message = CommandArg()):
+async def update_filed(matcher: Matcher, event: Event, commands: Message = CommandArg()):
+    if not check_account(event):
+        return
+    
     if command := commands.extract_plain_text():
         command_list = command.split(' ')
         if len(command_list) != 3:

@@ -5,7 +5,6 @@ from datetime import date, datetime, timedelta
 
 from nonebot.log import logger
 
-
 data_path = './data/nonebot_plugin_menstrual'
 if not os.path.exists(data_path):
     os.makedirs(data_path)
@@ -20,6 +19,7 @@ data_template = {
     'next_start': ''
 }
 
+
 class ComplexEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, datetime):
@@ -32,17 +32,17 @@ class ComplexEncoder(json.JSONEncoder):
 
 def init_data(name: str,
               pred_start: str,
-              cycle: int,
-              duration: int,
-              advance_prompt: int) -> None:
+              cycle: str,
+              duration: str,
+              advance_prompt: str) -> None:
     """初次使用时需初始化数据
 
     Args:
         name (str): 用户名/数据文件名
         pred_start (str): 最近一次经期开始的日期 -> 例: 2023-01-24
-        cycle (int): 月经周期 单位：天
-        duration (int): 持续时间 单位：天
-        advance_prompt (int): 提前几天提醒月经即将到来 单位：天
+        cycle (str): 月经周期 单位：天
+        duration (str): 持续时间 单位：天
+        advance_prompt (str): 提前几天提醒月经即将到来 单位：天
     """
     data = deepcopy(data_template)
     data['cycle'] = cycle
@@ -58,7 +58,7 @@ def init_data(name: str,
     set_pred_duration(name)
 
 
-def get_data(user_name: str) -> dict|None:
+def get_data(user_name: str) -> dict | None:
     try:
         with open(f'{data_path}/{user_name}.json', 'r') as f:
             return json.loads(f.read())
@@ -83,7 +83,7 @@ def set_pred_duration(user_name: str) -> None:
     user_data = get_data(user_name)
     if user_data is None:
         return
-    
+
     pred_start = date(*map(int, user_data['pred_start'].split('-')))
     pred_end = date(*map(int, user_data['pred_end'].split('-')))
     pred_duration = pred_end - timedelta(pred_start.day)
@@ -91,12 +91,11 @@ def set_pred_duration(user_name: str) -> None:
     modify_data(user_name, 'pred_duration', str(pred_duration.day))
 
 
-
 def set_pred_end(user_name: str, value: str = None) -> None:
     user_data = get_data(user_name)
     if user_data is None:
         return
-    
+
     if value:
         modify_data(user_name, 'pred_end', value)
 
@@ -108,5 +107,5 @@ def set_pred_end(user_name: str, value: str = None) -> None:
 def modify_data(user_name, key, value) -> None:
     data = get_data(user_name)
     data[key] = value
-    with open(f'{data_path}/{user_name}.json','w') as f2:
-        json.dump(data,f2, ensure_ascii=False, indent=4, cls=ComplexEncoder)
+    with open(f'{data_path}/{user_name}.json', 'w') as f2:
+        json.dump(data, f2, ensure_ascii=False, indent=4, cls=ComplexEncoder)
